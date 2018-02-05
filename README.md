@@ -18,3 +18,6 @@ Tasks
     - AddTodo
   - Allow user to mark a Todo as done by clicking on it
   - Add strikethrough style to a Todo when user marks it as done
+  
+---
+Copyright (c) 2018 ThoughtWorks. For personal use and training purposes only; not to be copied or distributed without further approval.
