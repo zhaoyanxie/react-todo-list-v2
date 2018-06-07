@@ -15,6 +15,7 @@ Tasks
   - Note: for each task, write tests for each component/functionality!
   - Create the following components:
     - TodoList
+      - import the todos defined in seedData.js and set it in TodoList's state
     - Todo
       - Allow user to mark a Todo as done by clicking on it
       - Add strikethrough style to a Todo when user marks it as done
