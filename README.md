@@ -1,15 +1,15 @@
-# TDD Todo List
+# Lab: React Todo List
 
-It's time to practice what you've learnt about React, Jest and Enzyme! 
+It's time to practice what you've learnt about React! 
 
 ### Instructions
 
 Getting started
   - Fork the repo
   - Clone the repo
-  - `cd` into the directory and run `yarn install`
-  - Run tests: `yarn test`
-  - Start application: `yarn start` and go to `localhost:3000` in your browser
+  - `cd` into the directory and run `npm install`
+  - Run tests: `npm test`
+  - Start application: `npm start` and go to `localhost:3000` in your browser
 
 Tasks
   - Note: for each task, write tests for each component/functionality!
