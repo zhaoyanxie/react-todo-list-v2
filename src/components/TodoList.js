@@ -15,34 +15,42 @@ class TodoList extends Component {
   render() {
     return (
       <div>
-        <InputForm 
+        <InputForm
           handleChange={event => this.handleChange(event)}
           onSubmit={event => this.handleSubmit(event)}
           value={this.state.value}
-          />
+        />
         <ul>
           {this.state.todos.map((eachObj, i) => (
-            <Todo key={i} item={eachObj} onClick={event => this.handleClick(event)}/>
+            <Todo
+              key={i}
+              item={eachObj}
+              onClick={event => this.handleClick(event)}
+            />
           ))}
         </ul>
-      </div>  
+      </div>
     );
   }
   handleChange(event) {
-    this.setState({value: event.target.value});
+    this.setState({ value: event.target.value });
   }
   handleSubmit(event) {
     if (this.state.value !== "") {
-      this.setState({todos: [...this.state.todos, 
-      {
-        name: this.state.value,
-        isCompleted: false
-      }
-    ]});
-    this.setState({value: ""});
+      this.setState({
+        todos: [
+          ...this.state.todos,
+          {
+            name: this.state.value,
+            isCompleted: false
+          }
+        ]
+      });
+      this.setState({ value: "" });
+    }
+    event.preventDefault();
   }
-  event.preventDefault();
-  }
+
   handleClick(event) {
     event.target.classList.toggle("todo-completed");
   }
