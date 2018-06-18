@@ -25,7 +25,7 @@ class TodoList extends Component {
             <Todo
               key={i}
               item={eachObj}
-              onClick={event => this.handleClick(event)}
+              onClick={() => this.handleClick(i)}
             />
           ))}
         </ul>
@@ -36,23 +36,32 @@ class TodoList extends Component {
     this.setState({ value: event.target.value });
   }
   handleSubmit(event) {
+    const newTodo = {
+      name: this.state.value,
+      isCompleted: false
+    };
     if (this.state.value !== "") {
       this.setState({
-        todos: [
-          ...this.state.todos,
-          {
-            name: this.state.value,
-            isCompleted: false
-          }
-        ]
+        todos: [...this.state.todos,newTodo]
       });
       this.setState({ value: "" });
     }
     event.preventDefault();
   }
 
-  handleClick(event) {
-    event.target.classList.toggle("todo-completed");
+  handleClick(i) {
+    let completedTask = this.state.todos[i];
+    completedTask.isCompleted = completedTask.isCompleted === true? false : true;
+    
+    this.setState({
+      todos: [
+        ...this.state.todos.slice(0, i),
+        completedTask,
+        ...this.state.todos.slice(i + 1)
+      ]
+    });
+    // event.preventDefault();
+    // event.target.classList.toggle("todo-completed");
   }
 }
 
